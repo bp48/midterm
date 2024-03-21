@@ -7,10 +7,10 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory in the container
-WORKDIR /
+WORKDIR /var/www/html
 
-# Copy the current directory contents into the container
-COPY . /
+# Copy the current directory contents into the container at /var/www/html
+COPY . /var/www/html
 
 # Install any dependencies your PHP application may need
 # For example, if you're using Composer for dependency management:
